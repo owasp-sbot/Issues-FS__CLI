@@ -13,19 +13,25 @@ class CLI__Label_Parser:                                                        
 
     @staticmethod
     def parse_type(label: str) -> Optional[Safe_Str__Node_Type]:                 # Extract type from label
-        if '-' not in label:                                                     # "Bug-27" → "bug"
+        if not label or '-' not in label:                                        # "Bug-27" → "bug"
             return None
         parts = label.split('-', 1)
         if len(parts) != 2:
             return None
+        type_part = parts[0].strip()
+        if not type_part:                                                        # Empty type portion
+            return None
         try:
-            return Safe_Str__Node_Type(parts[0].lower())
+            return Safe_Str__Node_Type(type_part.lower())
         except Exception:
             return None
 
     @staticmethod
     def parse_label(label: str) -> Optional[Safe_Str__Node_Label]:               # Validate and wrap label
-        if '-' not in label:
+        if not label or '-' not in label:
+            return None
+        parts = label.split('-', 1)
+        if len(parts) != 2 or not parts[0].strip():                              # Need valid type portion
             return None
         try:
             return Safe_Str__Node_Label(label)
