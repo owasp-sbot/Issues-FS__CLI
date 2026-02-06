@@ -1,0 +1,8 @@
+# for issues-fs-cli
+osbot-utils
+issues-fs
+typer
+
+# for testing
+pytest
+pytest-cov
