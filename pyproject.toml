@@ -1,0 +1,17 @@
+[tool.poetry]
+name        = "issues_fs_cli"
+version     = "v0.4.2"
+description = "Issues-FS__CLI"
+authors     = ["Dinis Cruz <dinis.cruz@owasp.org>"]
+license     = "Apache 2.0"
+readme      = "README.md"
+homepage    = "https://github.com/owasp-sbot/Issues-FS__CLI"
+repository  = "https://github.com/owasp-sbot/Issues-FS__CLI"
+
+[tool.poetry.dependencies]
+python            = "^3.12"
+osbot-utils       = "*"
+
+[build-system]
+requires = ["poetry-core>=1.9.1"]
+build-backend = "poetry.core.masonry.api"
