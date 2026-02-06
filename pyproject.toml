@@ -13,6 +13,7 @@ python            = "^3.12"
 osbot-utils       = "*"
 issues-fs         = "*"
 typer             = "*"
+issues-fs-cli     = "*"
 
 [tool.poetry.scripts]
 issues-fs = "issues_fs_cli.cli.cli__main:main"
