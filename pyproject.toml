@@ -11,6 +11,14 @@ repository  = "https://github.com/owasp-sbot/Issues-FS__CLI"
 [tool.poetry.dependencies]
 python            = "^3.12"
 osbot-utils       = "*"
+typer             = "*"
+issues-fs         = "*"
+
+[tool.poetry.scripts]
+issues-fs = "issues_fs_cli.cli.cli__main:main"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.2"
 
 [build-system]
 requires = ["poetry-core>=1.9.1"]

@@ -1,0 +1,15 @@
+{
+  "node_id": "6e37f126",
+  "node_type": "task",
+  "node_index": 1,
+  "label": "Task-1",
+  "title": "test cli from terminal",
+  "description": "",
+  "status": "backlog",
+  "created_at": 1770375782146,
+  "updated_at": 1770375782146,
+  "created_by": "41b81ef6",
+  "tags": [],
+  "links": [],
+  "properties": {}
+}
