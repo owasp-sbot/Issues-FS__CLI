@@ -1,0 +1,18 @@
+{
+  "node_id": "c7a3e1f0",
+  "node_type": "bug",
+  "node_index": 1,
+  "label": "Bug-1",
+  "title": "issues-fs list returns empty despite issues existing on disk",
+  "description": "Running 'issues-fs list' in any repo returns 'No issues found' and 'issues-fs types list' returns 'No node types defined', even when .issues/data/ contains issue folders with valid issue.json files and .issues/config/node-types.json has valid type definitions. The _index.json correctly reports total_nodes counts.\n\nAffects all repos in the ecosystem. Critical blocker for Conductor cross-repo scanning.\n\nLikely a path resolution or config loading issue in the CLI when reading from the .issues/ directory.\n\nReproduction:\n1. Run 'issues-fs init' in any repo (creates .issues/ with config and types)\n2. Manually verify .issues/config/node-types.json has types defined\n3. Run 'issues-fs types list' -> returns 'No node types defined'\n4. Run 'issues-fs create bug test' -> returns 'Error: Unknown node type: bug'\n5. In repos with existing issues (e.g. Issues-FS__Service__UI with 12 issues), 'issues-fs list' returns 'No issues found'\n\nEnvironment: issues-fs-cli v0.2.0, issues-fs v0.4.0, Python 3.12",
+  "status": "confirmed",
+  "created_at": 1770400000000,
+  "updated_at": 1770400000000,
+  "created_by": "conductor-agent",
+  "tags": ["critical", "cli", "blocker"],
+  "links": [],
+  "properties": {
+    "priority": "P0",
+    "severity": "critical"
+  }
+}
