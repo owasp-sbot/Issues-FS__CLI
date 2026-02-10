@@ -3,18 +3,15 @@
 # ═══════════════════════════════════════════════════════════════════════════════
 
 import typer
-
 from typing                                                                     import Optional
-
 from issues_fs_cli.cli.CLI__Context                                             import CLI__Context
 from issues_fs_cli.cli.CLI__Output                                              import CLI__Output
 from issues_fs.schemas.graph.Safe_Str__Graph_Types                              import Safe_Str__Node_Type
 
-
-def list_issues(node_type : Optional[str] = typer.Option(None, "--type", "-t", help="Filter by node type") ,
-                status    : Optional[str] = typer.Option(None, "--status", "-s", help="Filter by status")  ,
-                output    : str           = typer.Option("table", "--output", "-o", help="Output format")  ,
-                for_agent : bool          = typer.Option(False, "--for-agent", help="Agent-optimized output")
+def list_issues(node_type : Optional[str] = typer.Option(None   , "--type", "-t"    , help="Filter by node type"    ),
+                status    : Optional[str] = typer.Option(None   , "--status", "-s"  , help="Filter by status"       ),
+                output    : str           = typer.Option("table", "--output", "-o"  , help="Output format"          ),
+                for_agent : bool          = typer.Option(False  , "--for-agent"     , help="Agent-optimized output" )
            ) -> None:                                                            # List all issues
     try:
         context = CLI__Context()

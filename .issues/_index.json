@@ -1,13 +1,13 @@
 {
-  "total_nodes": 1,
-  "last_updated": 1770375782149,
+  "total_nodes": 3,
+  "last_updated": 1770692457864,
   "type_counts": [
     {
       "count": 0,
       "node_type": "git-repo"
     },
     {
-      "count": 0,
+      "count": 1,
       "node_type": "bug"
     },
     {
@@ -15,7 +15,7 @@
       "node_type": "task"
     },
     {
-      "count": 0,
+      "count": 1,
       "node_type": "feature"
     },
     {

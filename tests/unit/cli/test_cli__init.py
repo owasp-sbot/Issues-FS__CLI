@@ -44,15 +44,15 @@ class test_cli__init(TestCase):
     def test_init__creates_types(self):                                          # Test init creates node-types.json
         self.runner.invoke(app, ["init"])
 
-        # Files are stored in .issues/.issues/config/ directory
-        types_path = os.path.join(os.path.realpath(self.temp_dir), '.issues', '.issues', 'config', 'node-types.json')
+        # Files are stored in .issues/config/ directory
+        types_path = os.path.join(os.path.realpath(self.temp_dir), '.issues', 'config', 'node-types.json')
         assert os.path.isfile(types_path)
 
     def test_init__creates_link_types(self):                                     # Test init creates link-types.json
         self.runner.invoke(app, ["init"])
 
-        # Files are stored in .issues/.issues/config/ directory
-        link_types_path = os.path.join(os.path.realpath(self.temp_dir), '.issues', '.issues', 'config', 'link-types.json')
+        # Files are stored in .issues/config/ directory
+        link_types_path = os.path.join(os.path.realpath(self.temp_dir), '.issues', 'config', 'link-types.json')
         assert os.path.isfile(link_types_path)
 
     def test_init__already_exists(self):                                         # Test init when already exists
