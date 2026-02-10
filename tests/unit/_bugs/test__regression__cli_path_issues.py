@@ -6,7 +6,7 @@ from issues_fs.issues.graph_services.Graph__Repository__Factory import Graph__Re
 from issues_fs_cli.cli.CLI__Context                             import CLI__Context
 
 
-class test__bug__cli_path_issues(TestCase):
+class test__regression__cli_path_issues(TestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -33,15 +33,14 @@ class test__bug__cli_path_issues(TestCase):
 
     def test__cli_discovery_returns_dot_issues_path(self):                              # CLI returns .issues/ as root
 
-        with self.temp_folder as _:
-            ctx = CLI__Context.__new__(CLI__Context)                                    # Create without __init__
-            root = ctx.discover_issues_root()                                           # call discover_issues_root()
-            assert root.endswith('.issues') is True                                     # Returns path ending in .issues
-            assert self.issues_folder       in root                                     # OK: we get the issues folder, note we use 'in' in this test because on osx, the self.issues_folder started with /private
+        ctx = CLI__Context.__new__(CLI__Context)                                    # Create without __init__
+        root = ctx.discover_issues_root()                                           # call discover_issues_root()
+        assert root.endswith('.issues') is True                                     # Returns path ending in .issues
+        assert self.issues_folder       in root                                     # OK: we get the issues folder, note we use 'in' in this test because on osx, the self.issues_folder started with /private
 
 
 
-    def test__bug__cli_discovery_path_fed_to_factory_creates_double_path(self):         # Full chain: discover → factory → doubled
+    def test__regression__cli_discovery_path_fed_to_factory_creates_double_path(self):     # Full chain: discover → factory → doubled
 
         ctx = CLI__Context.__new__(CLI__Context)
         discovered_root = ctx.discover_issues_root()
@@ -53,4 +52,5 @@ class test__bug__cli_path_issues(TestCase):
         assert repo.path_handler.base_path == '.issues'                                     # Path handler still prepends .issues/
 
         config_path = repo.path_handler.path_for_node_types()                               # So effective paths are doubled
-        assert config_path == '.issues/config/node-types.json'                              # BUG: effective = .issues/.issues/...
+        #assert config_path == '.issues/config/node-types.json'                              # BUG: effective = .issues/.issues/...
+        assert config_path == 'config/node-types.json'                                      # FIXED
