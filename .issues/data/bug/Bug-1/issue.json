@@ -8,7 +8,7 @@
   "status": "confirmed",
   "created_at": 1770400000000,
   "updated_at": 1770400000000,
-  "created_by": "conductor-agent",
+  "created_by": "33cf9edd",
   "tags": ["critical", "cli", "blocker"],
   "links": [],
   "properties": {
