@@ -4,15 +4,15 @@
 
 import typer
 
-from issues_fs_cli.cli.cli__create                                              import create
-from issues_fs_cli.cli.cli__show                                                import show
-from issues_fs_cli.cli.cli__list                                                import list_issues
-from issues_fs_cli.cli.cli__update                                              import update
-from issues_fs_cli.cli.cli__delete                                              import delete
-from issues_fs_cli.cli.cli__link                                                import link, unlink, links
-from issues_fs_cli.cli.cli__comment                                             import comment, comments
-from issues_fs_cli.cli.cli__types                                               import types_app, link_types_app
-from issues_fs_cli.cli.cli__init                                                import init
+from issues_fs_cli.cli.cli__create      import create
+from issues_fs_cli.cli.cli__show        import show
+from issues_fs_cli.cli.cli__list        import list_issues
+from issues_fs_cli.cli.cli__update      import update
+from issues_fs_cli.cli.cli__delete      import delete
+from issues_fs_cli.cli.cli__link        import link, unlink, links
+from issues_fs_cli.cli.cli__comment     import comment, comments
+from issues_fs_cli.cli.cli__types       import types_app, link_types_app
+from issues_fs_cli.cli.cli__init        import init
 
 
 app = typer.Typer(name            = "issues-fs"                                 ,
