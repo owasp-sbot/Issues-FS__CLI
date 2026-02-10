@@ -1,0 +1,15 @@
+{
+  "node_id": "239bb80d",
+  "node_type": "feature",
+  "node_index": 1,
+  "label": "Feature-1",
+  "title": "Add issues-fs validate command to detect invalid issue data",
+  "description": "Add a 'validate' command to the issues-fs CLI that scans all issue JSON files and reports schema violations (e.g. invalid Obj_Id values in node_id or created_by fields) without crashing. Currently, a single invalid field causes the entire 'list' command to fail with a ValueError. The validate command should: (1) scan all issue.json files recursively, (2) attempt to deserialize each against Schema__Node, (3) collect and report all validation errors with file paths and field names, (4) exit with non-zero status if any errors found. This would have caught the invalid Obj_Id values (e.g. 'system', 'conductor-agent') that broke CLI listing on two repos.",
+  "status": "proposed",
+  "created_at": 1770692457855,
+  "updated_at": 1770692457855,
+  "created_by": "65eecccb",
+  "tags": [],
+  "links": [],
+  "properties": {}
+}
