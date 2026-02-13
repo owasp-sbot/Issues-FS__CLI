@@ -13,6 +13,8 @@ from issues_fs_cli.cli.cli__link        import link, unlink, links
 from issues_fs_cli.cli.cli__comment     import comment, comments
 from issues_fs_cli.cli.cli__types       import types_app, link_types_app
 from issues_fs_cli.cli.cli__init        import init
+from issues_fs_cli.cli.cli__check       import check
+from issues_fs_cli.cli.cli__normalise   import normalise
 
 
 app = typer.Typer(name            = "issues-fs"                                 ,
@@ -30,6 +32,14 @@ app.command("show"    )(show       )
 app.command("list"    )(list_issues)
 app.command("update"  )(update     )
 app.command("delete"  )(delete     )
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# .issues File Commands
+# ═══════════════════════════════════════════════════════════════════════════════
+
+app.command("check"    )(check     )
+app.command("normalise")(normalise )
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
